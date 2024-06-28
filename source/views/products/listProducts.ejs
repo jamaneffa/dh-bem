@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <%- include('../partials/header.ejs') %>
+        <main>
+            <%- include('../partials/navBrands.ejs') %>
+            <% if (products.length > 0) { %>
+            <section class="containerListProduct">
+                <% products.forEach(product => { %> 
+                <article class="producto">
+                    <a href="/products/<%= product.sku %>">
+                        <img src="https://res.cloudinary.com/dmqvbjyyi/image/upload/v1696350997/products/<%= product.image %>" alt="<%= product.image %>">
+                        <div>
+                            <p><%= product.name %></p>
+                            <p>$ <%= product.price %></p>
+                        </div>
+                    </a>
+                </article>
+                <% }) %> 
+            </section>
+        <% } %>
+        <%- include('../partials/navBrands.ejs') %>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>
