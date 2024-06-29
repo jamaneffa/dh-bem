@@ -7,9 +7,9 @@ Como parte de este proyecto, se nos solicitó diseñar un Dashboard realizado en
 La metodología de trabajo fue llevada adelante utilizando el método SCRUM y metodologías ágiles de desarrollo, usando un tablero de trabajo en la plataforma Trello. 
 Una vez finalizado el curso, continué implementando, de manera individual, distintas mejoras al proyecto en mi propio repositorio forkeado, como por ejemplo la implementación en los servicios de nube antes mencionados y la implementación de la capa de servicios que no estaba realizada para mantener el propósito del modelo MVC y la separación de responsabilidades que esto implica.
 
+Website Desplegado: https://beelegantmen.onrender.com
 
 # Description
-
 
 This is a project carried out in the context of the Full Stack Web Programming course at Digital House, in which an application was developed using Node.js with Express. 
 Initially, data was consumed from JSON files and later migrated to a relational MySQL database represented through Sequelize. This database initially ran locally and was later deployed to the cloud using the Always Data service. Similarly, the images were originally located in the same repository and were migrated to a cloud service (Cloudinary). 
@@ -17,3 +17,5 @@ JavaScript was the language used for the Back-End, while HTML, CSS, and JavaScri
 As part of this project, we were asked to design a Dashboard built in React that consumes information from APIs created by us. 
 The work methodology was carried out using the SCRUM method and agile development methodologies, using a work board on the Trello platform. 
 Once the course was completed, I continued to implement various improvements to the project individually, in my own forked repository, such as the implementation in the aforementioned cloud services and the implementation of the service layer that was not done to maintain the purpose of the MVC model and the separation of responsibilities that this implies.
+
+Website Deployed: https://beelegantmen.onrender.com
