@@ -9,7 +9,9 @@ window.addEventListener('load', () => {
 
     const sku = document.getElementById('productSku').value;
 
-    fetch(`http://localhost:3030/api/products/stock/${sku}`)
+    let baseUrl = new URL(window.location.href).origin
+
+    fetch(`${baseUrl}/api/products/stock/${sku}`)
         .then(response => response.json())
         .then(data => {
             productData = data.product.stock;

@@ -11,7 +11,7 @@ const cors = require('cors');
 
 // Cors configuration for deployed website
 // app.use((req, res, next) => {
-    //     res.setHeader('Access-Control-Allow-Origin', 'https://bem-cvku.onrender.com/');
+    //     res.setHeader('Access-Control-Allow-Origin', 'https://beelegantmen.onrender.com/');
     //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     //     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     //     next();

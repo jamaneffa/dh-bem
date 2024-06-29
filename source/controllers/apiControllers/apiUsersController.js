@@ -1,15 +1,22 @@
+require('dotenv').config();
+
 const userServices = require('../../services/userServices')
 
 const apiUsersController = {
     index: async (req, res) => {
+
+        const baseUrl =
+			process.env.ENV == "development"
+			  ? 'http://localhost:3030'
+			  : process.env.PRODUCTION_URL 
+
         let users = await userServices.getAllUsers()
             return res.status(200).json({
                 count: users.length,
                 users: users.map(user => ({
                     id : user.id,
                     name : user.first_name + ' ' + user.last_name,
-                    detail : `http://localhost:3030/api/users/${user.id}`
-                    //detail : `https://bem-cvku.onrender.com/api/users/${user.id}` url for deployed website
+                    detail : `${baseUrl}/api/users/${user.id}`
                 }))
             })
     },

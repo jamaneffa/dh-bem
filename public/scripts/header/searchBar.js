@@ -1,10 +1,13 @@
 window.addEventListener('load', async (e) => {
     try {
-        const format = text => String(text).toLowerCase().trim();
         
-        let petition = await fetch('http://localhost:3030/api/products/');
-        //let petition = await fetch('https://bem-cvku.onrender.com/api/products/'); //for web services deploy
+        const format = text => String(text).toLowerCase().trim();
+
+        let baseUrl = new URL(window.location.href).origin
+        
+        let petition = await fetch(`${baseUrl}/api/products/`);
         let response = await petition.json();
+
         localStorage.setItem('products', JSON.stringify(response));
         localStorage.setItem('productNames', JSON.stringify(response.products.map(product => ({name: format(product.name), sku: product.sku}))));
 

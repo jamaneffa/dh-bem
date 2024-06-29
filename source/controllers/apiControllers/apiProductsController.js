@@ -1,9 +1,17 @@
+require('dotenv').config();
+
 const productServices = require('../../services/productServices');
 
 const apiProductsController = {
 
     index: async (req, res) => {
 		try {
+
+			const baseUrl =
+			process.env.ENV == "development"
+			  ? 'http://localhost:3030'
+			  : process.env.PRODUCTION_URL 
+
 			let products = await productServices.getAllProducts()
 
 			return res.status(200).json({
@@ -20,8 +28,7 @@ const apiProductsController = {
 				products: products.map(product => ({
 					sku : product.sku,
 					name : product.name,
-					detail : `http://localhost:3030/api/products/${product.sku}`
-					//detail : `https://bem-cvku.onrender.com/api/products/${product.sku}`  url for deployed website
+					detail : `${baseUrl}/api/products/${product.sku}`
 				}))
 			})
 
